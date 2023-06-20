@@ -82,7 +82,7 @@ class BurpExtender(IBurpExtender, ITab, IScanIssue, IExtensionStateListener):
 
         
         self.configPanel.add(Box.createRigidArea(Dimension(0, 10)))
-        self.labelTest = JLabel("Path to nuclei binary:")
+        self.labelTest = JLabel("Path to nuclei binary >= v2.9.1:")
         self.labelTest.setAlignmentX(Component.LEFT_ALIGNMENT)
         self.configPanel.add(self.labelTest)
         
@@ -198,7 +198,7 @@ class BurpExtender(IBurpExtender, ITab, IScanIssue, IExtensionStateListener):
         self.scanResultsTab.add(tabActionPanel, BorderLayout.PAGE_START)
         self.tabPane.addTab(title,self.scanResultsTab)
         
-        cmd = "'" + self.nucleiPathField.text + "' -u " + url + " -t '" + self.nucleiTemplatesPathField.text + "' -json -nc " + self.nucleiCustomArgsField.text
+        cmd = "'" + self.nucleiPathField.text + "' -u " + url + " -t '" + self.nucleiTemplatesPathField.text + "' -j -nc " + self.nucleiCustomArgsField.text
         
         text += "Scanning of " + url + " started<br>" + cmd + "<br>"
         text += "-----------------------------------------------------------<br>"
